@@ -31,7 +31,7 @@ _XML_PATH = mjx_env.ROOT_PATH / "dm_control_suite" / "xmls" / "cartpole.xml"
 
 def default_vision_config() -> config_dict.ConfigDict:
   return config_dict.create(
-      nworld=1024,
+      nworld=256,
       cam_res=(64, 64),
       use_textures=False,
       use_shadows=False,
@@ -135,7 +135,7 @@ class Balance(mjx_env.MjxEnv):
     )
     qpos = qpos.at[1:].set(
         jax.random.uniform(
-            rng2, (self.mjx_model.nq - 1,), minval=-0.034, maxval=0.034
+            rng2, (self.mjx_model.nq - 1,), minval=-0.1, maxval=0.1
         )
     )
 

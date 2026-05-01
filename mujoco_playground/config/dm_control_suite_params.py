@@ -38,7 +38,7 @@ def brax_ppo_config(
       discounting=0.995,
       learning_rate=1e-3,
       entropy_cost=1e-2,
-      num_envs=2048,
+      num_envs=256,
       batch_size=1024,
       num_resets_per_eval=10,
   )
@@ -56,6 +56,9 @@ def brax_ppo_config(
   elif env_name == "PendulumSwingUp":
     rl_config.action_repeat = 4
     rl_config.num_updates_per_batch = 4
+  elif env_name == "AntGoalV5MJX":
+    rl_config.num_timesteps = 100_000_000
+    rl_config.num_envs = 128
 
   return rl_config
 

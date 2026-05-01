@@ -94,17 +94,17 @@ _USE_WANDB = flags.DEFINE_boolean(
     "Use Weights & Biases for logging (ignored in play-only mode)",
 )
 _USE_TB = flags.DEFINE_boolean(
-    "use_tb", False, "Use TensorBoard for logging (ignored in play-only mode)"
+    "use_tb", True, "Use TensorBoard for logging (ignored in play-only mode)"
 )
 _DOMAIN_RANDOMIZATION = flags.DEFINE_boolean(
-    "domain_randomization", False, "Use domain randomization"
+    "domain_randomization", True, "Use domain randomization"
 )
 _SEED = flags.DEFINE_integer("seed", 1, "Random seed")
 _NUM_TIMESTEPS = flags.DEFINE_integer(
     "num_timesteps", 1_000_000, "Number of timesteps"
 )
 _NUM_VIDEOS = flags.DEFINE_integer(
-    "num_videos", 1, "Number of videos to record after training."
+    "num_videos", 5, "Number of videos to record after training."
 )
 _NUM_EVALS = flags.DEFINE_integer("num_evals", 5, "Number of evaluations")
 _REWARD_SCALING = flags.DEFINE_float("reward_scaling", 0.1, "Reward scaling")

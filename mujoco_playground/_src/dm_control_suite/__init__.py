@@ -33,6 +33,7 @@ from mujoco_playground._src.dm_control_suite import point_mass
 from mujoco_playground._src.dm_control_suite import reacher
 from mujoco_playground._src.dm_control_suite import swimmer
 from mujoco_playground._src.dm_control_suite import walker
+from mujoco_playground._src.dm_control_suite import ant_goal_v5_mjx
 
 _envs = {
     "AcrobotSwingup": partial(acrobot.Balance, sparse=False),
@@ -68,6 +69,7 @@ _envs = {
     "WalkerRun": partial(walker.PlanarWalker, move_speed=walker.RUN_SPEED),
     "WalkerStand": partial(walker.PlanarWalker, move_speed=0.0),
     "WalkerWalk": partial(walker.PlanarWalker, move_speed=walker.WALK_SPEED),
+    "AntGoalV5MJX": ant_goal_v5_mjx.AntGoalEnvMJX,
 }
 
 _cfgs = {
@@ -97,6 +99,7 @@ _cfgs = {
     "WalkerRun": walker.default_config,
     "WalkerStand": walker.default_config,
     "WalkerWalk": walker.default_config,
+    "AntGoalV5MJX": ant_goal_v5_mjx.default_config,
     # go/keep-sorted end
 }
 
